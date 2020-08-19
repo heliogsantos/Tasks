@@ -12,7 +12,7 @@ const Done = props => {
   const filter = context.openModal ? context.FilterBlur : false
   
   return (
-    <div className="list" style={{filter}}>
+    <div className="list list-done" style={{filter}}>
       <HeaderLabelTitle sizeTask={5} title={props.title} labelColor={props.labelColor} />
       <Card progress={100} labelColor="#f28b82" done={true}/>
       <Card progress={100} labelColor="#fff475" done={true}/>
