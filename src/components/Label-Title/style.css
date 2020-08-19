@@ -1,0 +1,29 @@
+.list-header {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  justify-content: space-between;
+  background: transparent;
+}
+
+.list-header h2 {
+  font-weight: 400;
+  font-size: 14px;
+}
+.list-header .title {
+  display: flex;
+  align-items: center;
+}
+
+.list-header div > .label {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  margin-left: 10px;
+}
+
+.size-tasks {
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
