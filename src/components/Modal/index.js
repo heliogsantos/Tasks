@@ -35,13 +35,17 @@ const Modal = props => {
           <Button
             text="adicionar" 
             bgColorName="primary"
-            fontSize="14" 
+            fontSize="14"
+            padding="7px 20"
+            color="white"
           />
 
           <Button
             text="cancelar"
             bgColorName="cancel"
             fontSize="14"
+            padding="7px 20"
+            color="white"
             callback={() => toggleModal(false)} 
           />
         </div>

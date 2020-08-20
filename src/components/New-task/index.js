@@ -10,9 +10,11 @@ const NewTask = props => {
       <TaskContext.Consumer>
         {({toggleModal}) => (
           <Button
-            text="novo" 
+            text="novo"
+            padding="7px 20"
             bgColorName="primary"
             fontSize="14"
+            color="white"
             callback={() => toggleModal(true)} 
           />
         )}

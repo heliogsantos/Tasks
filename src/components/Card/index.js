@@ -3,6 +3,7 @@ import React from 'react';
 import { BsTextRight } from 'react-icons/bs';
 
 import { CardWraper, Title, CardBody } from './style'
+import Button from '../Button';
 
 const Card = props => {
   return (
@@ -10,7 +11,11 @@ const Card = props => {
       <Title>Titulo</Title>
       <CardBody>
         <p>Descrição card</p>
-        <button>{ !props.done ? <BsTextRight /> : false }</button>
+        <Button
+          padding="0"
+          color="black"
+          text={!props.done ? <BsTextRight /> : false}>
+        </Button>
       </CardBody>
     </CardWraper>
   )
