@@ -15,6 +15,11 @@ body,
   background: #f0f3f8;
 }
 
+:root {
+  --cancel: #f28b82;
+  --primary: #a0d266;
+}
+
 .container {
   width: 100%;
   padding: 13px 50px;
@@ -51,12 +56,4 @@ body,
   width: 20px;
   height: 20px;
   color: #000000;
-}
-
-.btn-cancel {
-  background: #f28b82;
-}
-
-.btn-primary {
-  background: #a0d266;
 }

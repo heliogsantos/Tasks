@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 
 import './style.css'
 import { TaskContext } from '../../contexts/TaskContext';
+import Button from '../Button';
 
-const Modal = _ => {
+const Modal = props => {
 
   const context = useContext(TaskContext)
 
@@ -31,8 +32,18 @@ const Modal = _ => {
           </form>
         </div>
         <div className="modal-footer">
-          <button className="btn-primary btn">adicionar</button>
-          <button className="btn-cancel btn" onClick={() => toggleModal(false)}>cancelar</button>
+          <Button
+            text="adicionar" 
+            bgColorName="primary"
+            fontSize="14" 
+          />
+
+          <Button
+            text="cancelar"
+            bgColorName="cancel"
+            fontSize="14"
+            callback={() => toggleModal(false)} 
+          />
         </div>
       </div>
       )}

@@ -2,21 +2,17 @@ import React from 'react';
 
 import { BsTextRight } from 'react-icons/bs';
 
-import './style.css'
+import { CardWraper, Title, CardBody } from './style'
 
 const Card = props => {
   return (
-    <div className="card" style={{background: props.labelColor}}>
-      <div className="card-header">
-        <h2>Titulo</h2>
-      </div>
-      <div className="card-body">
+    <CardWraper style={{background: props.labelColor}}>
+      <Title>Titulo</Title>
+      <CardBody>
         <p>Descrição card</p>
-        {
-          !props.done ? <BsTextRight className="icon" /> : false
-        }
-      </div>
-    </div>
+        <button>{ !props.done ? <BsTextRight /> : false }</button>
+      </CardBody>
+    </CardWraper>
   )
 }
 

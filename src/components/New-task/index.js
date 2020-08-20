@@ -2,19 +2,19 @@ import React from 'react';
 
 import './style.css'
 import { TaskContext } from '../../contexts/TaskContext';
+import Button from '../Button';
 
 const NewTask = props => {
-
-  const handleOpenModal = (toggleModal, event) => {
-    toggleModal(true)
-    event.stopPropagation()
-  }
-
   return (
     <div>
       <TaskContext.Consumer>
         {({toggleModal}) => (
-          <button className="btn btn-primary" onClick={(event) => handleOpenModal(toggleModal, event)}>novo</button>
+          <Button
+            text="novo" 
+            bgColorName="primary"
+            fontSize="14"
+            callback={() => toggleModal(true)} 
+          />
         )}
       </TaskContext.Consumer>
     </div>
