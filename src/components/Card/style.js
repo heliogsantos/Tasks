@@ -24,32 +24,12 @@ export const CardBody = styled.div `
 
   p {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 13px;
   }
-
-
+  
   button {
     border-style: none;
     background: transparent;
     cursor: pointer;
   }
 `
-
-/*
-p {
-  font-weight: 300;
-  font-size: 14px;
-}
-
-.card-body {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 0 0px 0;
-  align-items: center;
-}
-
-.card-body .icon {
-  cursor: pointer;
-}
-*/

@@ -2,9 +2,7 @@ import React from 'react';
 
 import { ButtonComponent } from './style'
 
-const Button = (
-  { text, callback = () => {}, bgColorName, fontSize, padding, color }
-) => {
+const Button = ( { text, callback = () => {}, bgColorName, fontSize, padding, color } ) => {
 
   return (
     <ButtonComponent
