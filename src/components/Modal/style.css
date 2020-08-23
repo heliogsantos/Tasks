@@ -1,21 +1,26 @@
 .modal {
   width: 400px;
-  background: #ffffff;
   border-radius: 2px;
-  padding: 20px 40px;
-  margin-bottom: 40px;
   z-index: 4;
   position: absolute;
   left: 50%;
   top: -100%;
   transform: translate(-59%, -50%);
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  -webkit-box-shadow: 2px -8px 105px -18px rgba(0,0,0,0.18);
-  -moz-box-shadow: 2px -8px 105px -18px rgba(0,0,0,0.18);
-  box-shadow: 2px -8px 105px -18px rgba(0,0,0,0.18);
+  align-items: center;
+  justify-content: center;
+  -webkit-box-shadow: 2px -8px 105px -18px rgba(0,0,0,.5);
+  -moz-box-shadow: 2px -8px 105px -18px rgba(0,0,0,.5);
+  box-shadow: 2px -8px 105px -18px rgba(0,0,0,.5);
   transition: 0.3s ease-in;
+  overflow: hidden;
+}
+
+.modal .moda-wraper {
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px 0 20px;
+  
 }
 
 .modal .modal-header {
@@ -25,12 +30,8 @@
 
 .modal .modal-header > h2 {
   font-size: 15px;
+  padding: 0 0 10px 0;
   font-weight: 400;
-}
-
-.modal .modal-footer {
-  display: flex;
-  justify-content: space-between;
 }
 
 .modal .modal-body {
@@ -40,18 +41,76 @@
 .modal .modal-body > form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: left;
 }
 
 form .field-input {
   width: 100%;
 }
 
+form Button {
+  margin-top: 20px;
+}
+
+form .input-palette {
+  width: 30%;
+}
+
+form .pallete-icon {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  opacity: .6;
+}
+
+form .pallete-icon img, form .activePaletterIcon img {
+  width: 100%;
+  height: 100%;
+  transition: .2s linear;
+}
+
+form .activePaletterIcon {
+  opacity: 1;
+  width: 25px;
+  height: 25px;
+}
+
 form .field-input input {
   width: 100%;
-  padding: 5px;
-  margin: 10px 0;
+  padding: 9px 10px;
+  margin: 12px 0;
   border-style: none;
-  border-bottom: 1px solid #b4b4b4;
+  border-left: 4px solid var(--primary);
+  background: #f5f5f5;
 }
+
+form .field-input input::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 12px;
+  color: #cccccc;
+}
+
+.modal .palettes-colors {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 10px 15px;
+  background: #ffffff;
+  -webkit-box-shadow: 1px 0px 6px 0px rgba(0,0,0,0.29);
+  -moz-box-shadow: 1px 0px 6px 0px rgba(0,0,0,0.29);
+  box-shadow: 1px 0px 6px 0px rgba(0,0,0,0.29);
+  transition: .4s linear;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal .palettes-colors .color-ball {
+  width: 30px;
+  height: 30px;
+  margin: 3px;
+  border-radius: 100%;
+  border: 1px solid #cccccc;
+  cursor: pointer;
+}
+
