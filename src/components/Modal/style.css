@@ -79,7 +79,6 @@ form .field-input input {
   padding: 9px 10px;
   margin: 10px 0;
   border-style: none;
-  border-left: 4px solid var(--primary);
   background: #f5f5f5;
 }
 
