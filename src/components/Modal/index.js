@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import './style.css'
 import { TaskContext } from '../../contexts/TaskContext';
 import Button from '../Button';
-import palette from '../../assets/images/palette.svg'
+import { FaPalette } from 'react-icons/fa';
 
 const Modal = props => {
 
@@ -78,15 +78,8 @@ const Modal = props => {
                 <input type="text" placeholder="Descrição"/>
               </div>
               <div onClick={(event => handlePalette(event))} className={activePaletteColor ? "activePaletterIcon" : "pallete-icon"}>
-                <img src={palette} alt="Paleta de cores do cartão"/>
+                <FaPalette className="pallete-icon" />
               </div>
-              <Button
-                text="adicionar"
-                bgColorName="primary"
-                fontSize="14"
-                padding="10px 20"
-                color="white"
-              />
             </form>
           </div>
           <div className="palettes-colors" onClick={(event) => handleStopPalettePropagation(event)} style={stylePaletteColor}> 
