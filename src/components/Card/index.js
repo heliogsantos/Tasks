@@ -1,18 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 
 import { BsTextRight } from 'react-icons/bs';
 
 import { CardWraper, Title, CardBody, Menu, List } from './style'
-import Button from '../Button';
+import { TaskContext } from '../../contexts/TaskContext';
+import { darkModeMenu, darkModeText, darkModeBorderButton } from '../../utils/dark-mode'
 
 const Card = props => {
 
   const [menuActive, setMenuActive] = useState(false)
-  
   const handleMenu = () => setMenuActive(menu => !menu)
+  const context = useContext(TaskContext)
+
+  const styleDarkMode = () => {
+    if(context.darkMode) {
+      return {
+        ...darkModeMenu(context),
+        ...darkModeText(context),
+        ...darkModeBorderButton(context)
+      }
+    }
+
+    return {
+      background: props.labelColor
+    }
+  }
 
   return (
-    <CardWraper style={{background: props.labelColor}}>
+    <CardWraper style={styleDarkMode()}>
       <Title>Titulo</Title>
       <CardBody>
         <p>Descrição card</p>

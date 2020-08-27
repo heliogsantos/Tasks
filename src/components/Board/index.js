@@ -6,13 +6,17 @@ import Doing from '../Doing';
 import Done from '../Done';
 import Modal from '../Modal'
 import { TaskContext } from '../../contexts/TaskContext';
+import { darkModeContent } from '../../utils/dark-mode'
 
 const Board = () => {
 
   const context = useContext(TaskContext)
-
+  
+  const darkMode = context.darkMode ? darkModeContent(context) : false
+  
   const styleScroll = {
-    overflow: context.openModal ? 'hidden' : false
+    overflow: context.openModal ? 'hidden' : false,
+    ...darkMode
   }
 
   return (

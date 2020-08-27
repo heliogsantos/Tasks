@@ -8,18 +8,23 @@
  text-decoration: none;
 }
 
-html,
-body, 
-#root {
-  height: 100%;
-  background: #f0f3f8;
-}
-
 :root {
   --cancel: #f28b82;
   --primary: #a0d266;
   --black: #000000;
-  --blue-default: #6ae2ed
+  --blue-default: #6ae2ed;
+  --dark-content: #16202c;
+  --dark-menu: #192734;
+  --bg-body: #f0f3f8;
+  --dark-text: #8899a6;
+  --yellow-color: #fff475;
+}
+
+html,
+body, 
+#root {
+  height: 100%;
+  background: var(--bg-body);
 }
 
 .container {
@@ -29,7 +34,7 @@ body,
 
 .list::-webkit-scrollbar {
   width: 2px;
-  background: #f0f3f8;
+  background: transparent;
 }
 
 .list::-webkit-scrollbar-thumb {

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import './style.css'
-import { TaskContext } from '../../contexts/TaskContext';
 import Button from '../Button';
+import { TaskContext } from '../../contexts/TaskContext'
 
 const NewTask = props => {
   return (

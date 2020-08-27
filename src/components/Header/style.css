@@ -19,8 +19,21 @@
 }
 
 .menu {
-  width: 100px;
+  width: 50%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+
+.menu, .btn-icon {
+  margin-left: 20px;
+}
+
+.menu, .btn-icon:nth-of-type(1) {
+  color: var(--blue-default);
+  transition: .2s linear;
+}
+
+.menu, .btn-icon:nth-of-type(1):hover {
+  color: var(--dark-text);
 }
