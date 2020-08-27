@@ -1,9 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 
 import './style.css'
 import { TaskContext } from '../../contexts/TaskContext';
-import Button from '../Button';
 import { FaPalette } from 'react-icons/fa';
+import { GoLightBulb } from 'react-icons/go'
+import { darkModeText, darkModeMenu, darkModeContent, darkModeBorderButton } from '../../utils/dark-mode'
 
 const Modal = props => {
 
@@ -13,8 +14,17 @@ const Modal = props => {
   const [colorPaletteChosen, setColorPaletteChosen] = useState('#ffffffff')
 
   const animateModal = {
-    top: context.openModal ? '50%' : false
+    top: context.openModal ? '50%' : false,
+    ...context.darkMode ? darkModeText(context) : false
   }
+
+  useEffect(() => {
+    if(context.darkMode) {
+      setColorPaletteChosen('var(--dark-menu)')
+    }else {
+      setColorPaletteChosen('#ffffffff')
+    }
+  }, [context.darkMode])
 
   const handleModal = (event) => {
     event.stopPropagation()
@@ -55,6 +65,11 @@ const Modal = props => {
     setActivePaletteColor(activePalette => !activePalette)
   }
 
+  const inputDarkMode = {
+    ...context.darkMode ? darkModeContent(context) : false,
+    ...context.darkMode ? darkModeBorderButton(context) : false,
+  }
+
   const handleStopPalettePropagation = (event) => event.stopPropagation()
 
   function handleChosenColorModal(colorPaletteChosen) {
@@ -72,25 +87,42 @@ const Modal = props => {
           <div className="modal-body">
             <form>
               <div className="field-input">
-                <input type="text" placeholder="Título"/>
+                <input style={inputDarkMode} type="text" placeholder="Título"/>
               </div>  
               <div className="field-input">
-                <input type="text" placeholder="Descrição"/>
+                <input style={inputDarkMode} type="text" placeholder="Descrição"/>
               </div>
-              <div onClick={(event => handlePalette(event))} className={activePaletteColor ? "activePaletterIcon" : "pallete-icon"}>
-                <FaPalette className="pallete-icon" />
-              </div>
+              {
+                !context.darkMode ? 
+                  <div onClick={(event => handlePalette(event))} className={activePaletteColor ? "activePaletterIcon" : "pallete-icon"}>
+                    <FaPalette className="pallete-icon" />
+                  </div> 
+                : false
+              }
+              {
+                context.darkMode ? 
+                  <div className="alert-dark-mode">
+                    <GoLightBulb style={{ color: 'var(--yellow-color)' }}/>
+                    <p>O modo Escuro está ativo, <br></br> desative para mais recursos visuais.</p>
+                  </div> 
+                : false
+              }
             </form>
           </div>
-          <div className="palettes-colors" onClick={(event) => handleStopPalettePropagation(event)} style={stylePaletteColor}> 
-            {
-              palettesColors.map((color, index) => {
-                return (
-                  <div key={index} className="color-ball" style={{ background: getColor(color)}} onClick={() => handleChosenColorModal(color)}></div>
-                )
-              })
-            } 
-          </div>
+          {
+            !context.darkMode ? 
+              <div className="palettes-colors" onClick={(event) => handleStopPalettePropagation(event)} style={stylePaletteColor}> 
+                {
+                  palettesColors.map((color, index) => {
+                    return (
+                      <div key={index} className="color-ball" style={{ background: getColor(color)}} onClick={() => handleChosenColorModal(color)}></div>
+                    )
+                  })
+                } 
+              </div> 
+            : false
+          }
+          
         </div>
       </div>
       )}
