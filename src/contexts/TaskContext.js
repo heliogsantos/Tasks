@@ -5,7 +5,7 @@ const TaskContext = createContext()
 
 const TaskContextProvider = ({ children }) => {
 
-  const [openModal, setOpenModal] = useState(true)
+  const [openModal, setOpenModal] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
   const state = {
